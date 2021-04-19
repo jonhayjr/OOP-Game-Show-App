@@ -14,7 +14,7 @@ document.getElementById('btn__reset').addEventListener('click', () => {
     game.startGame();
 })
 
-//Start new game when enter is pressed on the keyboard
+//Start new game when enter is pressed on the keyboard and overlay isn't hidden
 window.addEventListener('keydown', (e) => {  
     const keyPressed = e.key;
     const overlay = document.querySelector('#overlay');
@@ -30,6 +30,7 @@ window.addEventListener('keydown', (e) => {
 //Selects keyboard section and adds event listener to all button elements
 const keyboardDiv = document.getElementById('qwerty');
 keyboardDiv.addEventListener('click', (e) => {
+    //handleInteraction method is only run if a button is clicked
     if (e.target.nodeName === 'BUTTON') {
         game.handleInteraction(e.target);
     }
@@ -41,6 +42,7 @@ window.addEventListener('keydown', (e) => {
     const buttons = document.querySelectorAll('#qwerty button');
 
     buttons.forEach(button => {
+        //If the keyboard button equals the key that was pressed, handleInteraction method is run for that button
         if (button.innerHTML.toLowerCase() === letter) {
             game.handleInteraction(button);
         }

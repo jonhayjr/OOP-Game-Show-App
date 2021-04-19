@@ -50,6 +50,7 @@ class Game {
 * @return {Object} Phrase object chosen to be used 
 */ 
     getRandomPhrase() {
+        //Uses getRandomNumber method to select random number based on phrases length
         const randomNumber = this.getRandomNumber(this.phrases.length);
         const randomPhrase = this.phrases[randomNumber];
         return randomPhrase;
@@ -177,7 +178,7 @@ won
             this.gameOver(gameWon);
         }
     } else {
-        //If button is wrong, wrong class is added an life is removed.
+        //If button is wrong, wrong class is added a life is removed.
         button.className = 'wrong';
         this.removeLife();
     }
