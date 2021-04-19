@@ -30,6 +30,7 @@ addPhraseToDisplay() {
 * @param (string) letter - Letter to check 
 */ 
 checkLetter(letter) {
+    //Checks to see if phrase contains letter
     const containsLetter = this.phrase.indexOf(letter) >= 0 ? true : false;
     return containsLetter;
 }
@@ -39,7 +40,10 @@ checkLetter(letter) {
 * @param (string) letter - Letter to display
 */
 showMatchedLetter(letter) {
+    //Selects letters with class of the letter that was selected
   const matchingLetters = document.querySelectorAll(`.${letter}`);
+  
+  //Add show class to these letters
   matchingLetters.forEach(letter => {
       letter.className = `show letter ${letter}`;
   })

@@ -147,7 +147,7 @@ won
 
         const gameOverH1 = document.getElementById('game-over-message');
 
-        //Custom message is display on overlay depending on whether or not the player won the game.
+        //Custom message is displayed on the overlay depending on whether or not the player won the game.
         if (gameWon) {
             gameOverH1.innerHTML = 'You won!  Great job!';
             overlay.className = 'win';
