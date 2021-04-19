@@ -4,6 +4,7 @@
 // const phrase = new Phrase('Life is like a box of chocolates');
 // console.log(`Phrase - phrase: ${phrase.phrase}`);
 
+//Creates new game
 let game;
 
 //Resets game when start button is clicked

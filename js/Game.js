@@ -36,23 +36,8 @@ class Game {
 * @return {Object} Phrase object chosen to be used 
 */ 
     getRandomPhrase() {
-        let randomNumber = Math.floor(Math.random() * this.phrases.length);
-        let randomPhrase = this.phrases[randomNumber];
-
-          /*If phrase has been used already and all phrases haven't been used, a new phrase is selected*/
-        while (this.usedPhrases.includes(randomPhrase) && this.usedPhrases.length !== this.phrases.length) {
-        randomNumber = Math.floor(Math.random() * this.phrases.length);
-        randomPhrase = this.phrases[randomNumber];
-        }
-
-    /*If all phrases have been used, usedPhrases array is reset*/
-        if (this.usedPhrases.length === this.phrases.length) {
-        this.usedPhrases = [];
-        }
-
-    /*Random Phrase is pushed to Used Phrase Array*/
-        this.usedPhrases.push(randomPhrase);
- 
+        const randomNumber = Math.floor(Math.random() * this.phrases.length);
+        const randomPhrase = this.phrases[randomNumber];
         return randomPhrase;
     };
 /**
