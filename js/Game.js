@@ -164,13 +164,15 @@ won
     handleInteraction(button) {
     //Selected button letter value
     const buttonLetter = button.innerHTML;
-    //Disabled button that was clicked
+    //Disable button that was clicked
     button.disabled = true;
 
+    //Add disabled class
+    button.classList.add('disabled');
 
     if (this.activePhrase.checkLetter(buttonLetter)) {
         //If clicked letter is in phrase, chosen class is added to clicked letter, matched letters are display, and function checks to see if game has been won
-        button.className = 'chosen';    
+        button.classList.add('chosen');    
         this.activePhrase.showMatchedLetter(buttonLetter);
         const gameWon = this.checkForWin();
         //If game was won, gameOver method is run
@@ -179,7 +181,7 @@ won
         }
     } else {
         //If button is wrong, wrong class is added a life is removed.
-        button.className = 'wrong';
+        button.classList.add('wrong');
         this.removeLife();
     }
     };

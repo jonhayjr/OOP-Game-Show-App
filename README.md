@@ -10,5 +10,17 @@ When the player starts the game, a random background color is selected.  I added
 1. Click Enter to Start Game
 I added an additional 'keydown' event listener that checks to see if 'Enter' is pressed.  If this key is pressed and start game overlay is visible, a new game is started.
 
+1. Phrase Letter Transition
+I added a custom cubic bezier transition to the phrases letters.
+
+1. Start Button Hover Effects
+I added custom hover effects to the start button.  The background color is based on the whether the game has been won or lost.
+
+1. Main Text
+I updated the main text to Ubuntu.
+
+1. Disabled Key Button Class
+I added a disabled class that is added to keys when they are selected.
+
 **Click below for a preview**\
 https://www.jonhayjr.com/OOP-Game-Show-App

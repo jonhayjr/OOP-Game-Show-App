@@ -43,7 +43,7 @@ window.addEventListener('keydown', (e) => {
 
     buttons.forEach(button => {
         //If the keyboard button equals the key that was pressed, handleInteraction method is run for that button
-        if (button.innerHTML.toLowerCase() === letter) {
+        if (button.innerHTML.toLowerCase() === letter && button.disabled === false) {
             game.handleInteraction(button);
         }
     })

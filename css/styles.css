@@ -1,5 +1,5 @@
 /* Main styles */
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&Roboto:300');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&Roboto:300&Ubuntu:wght@300;400;700');
 
 /* Variables */
 
@@ -20,7 +20,7 @@
 
 * {
   box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 body {
@@ -63,12 +63,6 @@ button {
 #btn__reset {
 	width: 200px;
 	margin: 0 auto;
-}
-
-#btn__reset:hover {
-  background-color: var(--color-keys);
-  color: var(--color-keys-light);
-  border: 1px solid var(--color-keys-light);
 }
 
 .main-container {
@@ -124,16 +118,18 @@ button {
   padding: 20px 1px 0 1px;
   margin-right: 2px;
   border-radius: 5px;
-  -webkit-animation-duration: .5s;
-  animation-duration: .5s;
+  transition: all 1s cubic-bezier(0.1, 0.7, 1.0, 1.0);
 }
 
 
 /* Keyboard */
-
 .keyrow {
   display: flex;
   justify-content: center;
+}
+
+.key {
+  border: 1 solid transparent;
 }
 
 .chosen {
@@ -165,6 +161,10 @@ button {
   border-right: solid 3px rgba(0, 0, 0, 0);
 }
 
+.disabled {
+  cursor: not-allowed;
+  border: 1px solid rgba(197, 163, 175, 0.1); 
+}
 
 /* Overlay */
 
@@ -193,6 +193,13 @@ button {
   color: #fff;
 }
 
+.start button:hover {
+  color: #fff;
+  background-color: var(--color-keys);
+  color: var(--color-keys-light);
+  border: 1px solid var(--color-keys-light);
+}
+
 .win {
   background-color: var(--color-win);
 }
@@ -201,10 +208,35 @@ button {
   color: var(--color-win);
 }
 
+.win button {
+  background-color: var(--color-win);
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+.win button:hover {
+  color: var(--color-win);
+  background-color: #fff;
+  border: 1px solid var(--color-win);
+}
+
 .lose {
-  background-color: #f5785f;
+  background-color: var(--color-lose);
 }
 
 .lose a {
   color: var(--color-lose);
 }
+
+.lose button {
+  color: #fff;
+  background-color: var(--color-lose);
+  border: 1px solid #fff;
+}
+
+.lose button:hover {
+  color: var(--color-lose);
+  background-color: #fff;
+  border: 1px solid #var(--color-lose);
+} 
+

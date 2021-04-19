@@ -45,7 +45,7 @@ showMatchedLetter(letter) {
   
   //Add show class to these letters
   matchingLetters.forEach(letter => {
-      letter.className = `show letter ${letter}`;
+      letter.className = 'show';
   })
 };
 
