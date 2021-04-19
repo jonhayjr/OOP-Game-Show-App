@@ -66,6 +66,8 @@ class Game {
         //Enable all key buttons and update to key class
         const letterButtons = document.querySelectorAll('#qwerty button');
         letterButtons.forEach(button => {
+            //Remove transition from buttons to resolve flickering issue
+            button.style.transition = 'none';
             button.disabled = false;
             button.className = 'key';
         });
