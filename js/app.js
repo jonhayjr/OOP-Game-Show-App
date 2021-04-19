@@ -9,6 +9,9 @@ let game;
 //Resets game when start button is clicked
 document.getElementById('btn__reset').addEventListener('click', () => {
     game = new Game();
+    //Resets Game
+    game.resetGame();
+    //Start Game
     game.startGame();
 })
 
@@ -16,7 +19,6 @@ document.getElementById('btn__reset').addEventListener('click', () => {
 const keyboardDiv = document.getElementById('qwerty');
 keyboardDiv.addEventListener('click', (e) => {
     if (e.target.nodeName === 'BUTTON') {
-        console.log(e.target.nodeName);
         game.handleInteraction(e.target);
     }
 })

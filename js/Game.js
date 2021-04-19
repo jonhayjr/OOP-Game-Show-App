@@ -60,8 +60,21 @@ class Game {
     }
     resetGame() {
         const phraseList = document.querySelector('#phrase ul');
+        //Clear phrase HTML
         phraseList.innerHTML = '';
-        
+
+        //Enable all key buttons and update to key class
+        const letterButtons = document.querySelectorAll('#qwerty button');
+        letterButtons.forEach(button => {
+            button.disabled = false;
+            button.className = 'key';
+        });
+
+        //Resets heart images
+        const heartImages = document.querySelectorAll('.tries');
+        heartImages.forEach(image => {
+            image.src = 'images/liveHeart.png';
+        });
     }
 /**
 * Checks for winning move
