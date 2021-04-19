@@ -4,7 +4,7 @@
 class Game {
     constructor() {
         this.missed = 0;
-        this.phrases = this.createPhrases();
+        this.phrases = this.createPhrases(); 
         this.activePhrase = null;
     }
    /** 
@@ -111,6 +111,7 @@ won
 */
     checkForWin() {
     const hide = document.querySelectorAll('.hide');
+    //Use number of display letters with class of hide to determine if player won game.  If not letters have this class, the player won.
     const gameWon = hide.length === 0 ? true : false;
     return gameWon;
     };
@@ -120,11 +121,16 @@ won
 * Checks if player has remaining lives and ends game if player is out
 */
     removeLife() {
+        //1 is added to missed value
         this.missed++;
         const heartImages = document.querySelectorAll('img[src="images/liveHeart.png"]');
-        const lastItem = heartImages.length - 1;
-        heartImages[lastItem].src = "images/lostHeart.png";
-
+        //Heart image is updated to Lost Heart for last item if there are still heart images on screen
+        if (heartImages.length > 0) {
+            const lastItem = heartImages.length - 1;
+            heartImages[lastItem].src = "images/lostHeart.png";
+        }
+        
+        //If player gets 5 wrong guesses, the game is over.
         if (this.missed === 5) {
             const gameWon = this.checkForWin();
             this.gameOver(gameWon);
@@ -141,6 +147,7 @@ won
 
         const gameOverH1 = document.getElementById('game-over-message');
 
+        //Custom message is display on overlay depending on whether or not the player won the game.
         if (gameWon) {
             gameOverH1.innerHTML = 'You won!  Great job!';
             overlay.className = 'win';
