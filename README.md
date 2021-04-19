@@ -11,4 +11,4 @@ When the player starts the game, a random background color is selected.  I added
 I added an additional 'keydown' event listener that checks to see if 'Enter' is pressed.  If this key is pressed and start game overlay is visible, a new game is started.
 
 **Click below for a preview**\
-https:www.//jonhayjr.com/OOP-Game-Show-App/
+https://www.jonhayjr.com/OOP-Game-Show-App
