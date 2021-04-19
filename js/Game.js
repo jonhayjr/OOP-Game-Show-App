@@ -6,7 +6,6 @@ class Game {
         this.missed = 0;
         this.phrases = this.createPhrases();
         this.activePhrase = null;
-        this.usedPhrases = [];
     }
    /** 
 * Creates phrases for use in game 
@@ -27,6 +26,21 @@ class Game {
          },
          {
              phrase: 'the elephant in the room'
+         },
+         {
+             phrase: 'once in a blue moon'
+         },
+         {
+             phrase: 'no pain no gain'
+         },
+         {
+             phrase: 'break a leg'
+         },
+         {
+             phrase: 'it takes two to tango'
+         },
+         {
+             phrase: 'like two peas in a pod'
          }
      ]
      return array;
@@ -36,7 +50,7 @@ class Game {
 * @return {Object} Phrase object chosen to be used 
 */ 
     getRandomPhrase() {
-        const randomNumber = Math.floor(Math.random() * this.phrases.length);
+        const randomNumber = this.getRandomNumber(this.phrases.length);
         const randomPhrase = this.phrases[randomNumber];
         return randomPhrase;
     };
@@ -47,6 +61,12 @@ class Game {
         const overlay = document.getElementById('overlay');
         //Hides game screen overlay
         overlay.style.display = 'none';
+
+        //Get random background color
+        const randomBackgroundColor = `rgb(${this.getRandomNumber(256)}, ${this.getRandomNumber(256)}, ${this.getRandomNumber(256)})`;
+
+        //Update background to random color
+        document.querySelector('body').style.backgroundColor = randomBackgroundColor;
 
         //Gets random phrase using getRandomPhrase() method
         const randomPhrase = this.getRandomPhrase();
@@ -60,6 +80,9 @@ class Game {
         //Updates activePhrase value to randomPhrase
         this.activePhrase = phrase;
     }
+/**
+ * Resets game by clearing phrase, updating button styling and replacing heart images
+ */
     resetGame() {
         const phraseList = document.querySelector('#phrase ul');
         //Clear phrase HTML
@@ -152,5 +175,10 @@ won
         this.removeLife();
     }
     };
+//This method gets random number and uses max parameter
+    getRandomNumber (max) {
+        let randomNumber = Math.floor(Math.random() * max); 
+        return randomNumber;
+    }
 }
 
