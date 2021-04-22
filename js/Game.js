@@ -102,6 +102,8 @@ class Game {
         const heartImages = document.querySelectorAll('li.tries img');
 
         heartImages.forEach(image => {
+            //Removed transition on heart images to resolve flickering issue
+            image.style.transition = 'none';
             image.src = 'images/liveHeart.png';
         });
     }
