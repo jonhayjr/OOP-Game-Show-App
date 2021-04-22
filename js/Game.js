@@ -111,10 +111,10 @@ class Game {
 won
 */
     checkForWin() {
-    const hide = document.querySelectorAll('.hide');
-    //Use number of display letters with class of hide to determine if player won game.  If not letters have this class, the player won.
-    const gameWon = hide.length === 0 ? true : false;
-    return gameWon;
+        const hide = document.querySelectorAll('.hide');
+        //Use number of display letters with class of hide to determine if player won game.  If not letters have this class, the player won.
+        const gameWon = hide.length === 0 ? true : false;
+        return gameWon;
     };
 /**
 * Increases the value of the missed property
@@ -143,8 +143,8 @@ won
 */
     gameOver(gameWon) {
         const overlay = document.getElementById('overlay');
-        //Show game screen overlay
-        overlay.style.display = '';
+        //Show game screen overlay with .5s delay
+        setTimeout(() => {overlay.style.display = ''}, 500);
 
         const gameOverH1 = document.getElementById('game-over-message');
 
