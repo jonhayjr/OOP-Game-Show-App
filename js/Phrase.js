@@ -14,7 +14,7 @@ addPhraseToDisplay() {
     //Splits phrase into array of characters
     const letters = this.phrase.split('');
    
-    //Loops through each item in the letters array.  The HTML that is added depends on whether or no the character is a letter or a space
+    //Loops through each item in the letters array.  The HTML that is added depends on whether or not the character is a letter or a space
     letters.forEach(letter => {
         if (letter !== ' ') {
             HTML += `<li class="hide letter ${letter}">${letter}</li>`;
