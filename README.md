@@ -4,7 +4,7 @@ This is a word guessing game that generates a random phrase and gives a player 5
 ## Customizations
 I added a few different customizations to this game to make it unique.
 
-1. Random Background Color  
+1. Random Background Color   
 When the player starts the game, a random background color is selected.  I added a method to the game class that can be used to create a random number.  This method is called when the game is started and used to create 3 random RGB color values.
 
 1. Click Enter to Start Game  

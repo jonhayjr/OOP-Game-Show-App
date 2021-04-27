@@ -59,6 +59,9 @@ class Game {
 * Begins game by selecting a random phrase and displaying it to user
 */
     startGame() {
+         //Resets Game
+         game.resetGame();
+         
         const overlay = document.getElementById('overlay');
         //Hides game screen overlay
         overlay.style.display = 'none';

@@ -8,8 +8,6 @@ let game;
 //Start new game when start button is clicked
 document.getElementById('btn__reset').addEventListener('click', () => {
     game = new Game();
-    //Resets Game
-    game.resetGame();
     //Start Game
     game.startGame();
 })
@@ -20,8 +18,6 @@ window.addEventListener('keydown', (e) => {
     const overlay = document.querySelector('#overlay');
     if (keyPressed === 'Enter' && overlay.style.display === '') {
         game = new Game();
-        //Resets Game
-        game.resetGame();
         //Start Game
         game.startGame();
     }
